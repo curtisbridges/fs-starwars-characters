@@ -31,20 +31,6 @@ const getPeoplePage = async (page) => {
   const results = response?.results ?? []
 
   const people = results.map((item) => {
-    // let unresolvedPlanets = []
-    // if (!planetsCache[item.homeworld]) {
-    //   unresolvedPlanets.push(item.homeworld)
-    // }
-    // if (unresolvedPlanets.length > 0) {
-    //   const planets = Promise.all(
-    //     unresolvedPlanets.map(async (url) => {
-    //       const resp = await fetch(url)
-    //       return resp.json()
-    //     })
-    //   )
-    //   console.log(planets)
-    // }
-
     return {
       name: item.name,
       origin: planetsCache[item.homeworld]

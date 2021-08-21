@@ -1,7 +1,7 @@
 {
   "name": "skillsoft-problem",
   "version": "1.0.0",
-  "description": "Tech to use Node.js/React Code challenge:",
+  "description": "Skillsoft Full-Stack Project",
   "main": "index.js",
   "scripts": {
     "start": "node src/server/index.js",

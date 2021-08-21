@@ -27,8 +27,10 @@ Make the card responsive to where a phone sized screen shows 1 card across and a
   - [x] Implement graphql operation for sw people.
     - [x] Define the schema
     - [x] Implement the resolvers
+    - [ ] Document GraphQL schema
     - [ ] Add GraphQL testing library? (Apollo)
 - [ ] Create React front-end (mobile first)
+  - [ ] Update Node.js to serve react front-end
   - [ ] Fetch SW data in front-end
   - [ ] Display: name, origin, height, mass, and birth date.
     - [ ] Make one card wide.
