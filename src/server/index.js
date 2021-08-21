@@ -1,16 +1,5 @@
-const express = require('express')
-const app = express()
+const starwars = require('./graphql/starwars')
 
-const peopleRoute = require('./routes/people')
-
-const PORT = process.PORT ?? 3000
-
-app.get('/', function (req, res) {
-  res.send('Temporary placeholder text')
-})
-
-app.use('/people', peopleRoute)
-
-app.listen(PORT, () => {
-  console.log(`Server up on port ${PORT}`)
+starwars.server.listen().then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`)
 })

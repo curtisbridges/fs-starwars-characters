@@ -24,9 +24,9 @@ Make the card responsive to where a phone sized screen shows 1 card across and a
   - [x] Create Jest tests for data model
   - [x] Node service fetch Star Wars people endpoint.
 - [x] Create node service
-  - [ ] Implement graphql operation for sw people.
-    - [ ] Define the schema
-    - [ ] Implement the resolvers
+  - [x] Implement graphql operation for sw people.
+    - [x] Define the schema
+    - [x] Implement the resolvers
     - [ ] Add GraphQL testing library? (Apollo)
 - [ ] Create React front-end (mobile first)
   - [ ] Fetch SW data in front-end

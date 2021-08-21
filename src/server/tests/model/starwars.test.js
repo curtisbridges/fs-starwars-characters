@@ -20,3 +20,9 @@ test('Should fetch third page of people', async () => {
   expect(page.next).toEqual('https://swapi.dev/api/people/?page=4')
   expect(page.previous).toEqual('https://swapi.dev/api/people/?page=2')
 })
+
+test('Should fetch planet by url', async () => {
+  const planet = await starwars.getPlanet('https://swapi.dev/api/planets/1/')
+  expect(planet).not.toBeNull()
+  expect(planet.name).toEqual('Tatooine')
+})

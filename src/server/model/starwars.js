@@ -18,7 +18,7 @@ const getPeoplePage = async (page) => {
   const responseJSON = await fetch(`${SW_PEOPLE}/?page=${page}`)
   const response = await responseJSON.json()
 
-  // TODO: check response status???
+  // TODO: check response status
 
   // important fields:
   // count
@@ -47,7 +47,7 @@ const getPeoplePage = async (page) => {
 
     return {
       name: item.name,
-      home: planetsCache[item.homeworld]
+      origin: planetsCache[item.homeworld]
         ? planetsCache[item.homeworld]
         : item.homeworld,
       height: item.height,
@@ -99,4 +99,9 @@ const getPlanetPage = async (page) => {
   return planets
 }
 
-module.exports = { people: peopleCache, planets: planetsCache, getPeoplePage }
+module.exports = {
+  people: peopleCache,
+  planets: planetsCache,
+  getPeoplePage,
+  getPlanet,
+}
