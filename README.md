@@ -19,9 +19,11 @@ Make the card responsive to where a phone sized screen shows 1 card across and a
 
 ## TODO List
 - [x] Create TODO list
-- [ ] Create git repo locally.
-- [ ] Create node service
-  - [ ] Node service fetch Star Wars people endpoint.
+- [x] Create git repo locally.
+- [x] Create Star Wars data model
+  - [x] Create Jest tests for data model
+  - [x] Node service fetch Star Wars people endpoint.
+- [x] Create node service
   - [ ] Implement graphql operation for sw people.
     - [ ] Define the schema
     - [ ] Implement the resolvers
