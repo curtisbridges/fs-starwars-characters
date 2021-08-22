@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer, gql } = require('apollo-server-express')
 const { getPeoplePage, getPlanet } = require('../model/starwars')
 
 // The GraphQL schema
@@ -52,4 +52,4 @@ const server = new ApolloServer({
   resolvers,
 })
 
-module.exports = { server }
+module.exports = server

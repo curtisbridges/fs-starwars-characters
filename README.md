@@ -35,6 +35,7 @@ Make the card responsive to where a phone sized screen shows 1 card across and a
   - [ ] Display: name, origin, height, mass, and birth date.
     - [ ] Make one card wide.
   - [ ] Add testing with React Testing Library?
+  - [ ] Remove old express endpoints
 - [ ] Page data
   - [ ] Add load more link to React front-end
 - [ ] Style the app

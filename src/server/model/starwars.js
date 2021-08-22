@@ -86,8 +86,6 @@ const getPlanetPage = async (page) => {
 }
 
 module.exports = {
-  people: peopleCache,
-  planets: planetsCache,
   getPeoplePage,
   getPlanet,
 }
