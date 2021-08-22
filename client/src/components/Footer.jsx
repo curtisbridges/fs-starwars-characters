@@ -1,21 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom'
+
 
 function Footer(props) {
+  const prev = +props.page - 1
+  const next = +props.page + 1
+
+  console.log(`Next=${next}`)
+  console.log(`Prev=${prev}`)
+
+  function handleClick(page) {
+    console.log(`Changing page to ${page}`)
+    props.setPage(page)
+  }
+
   return (
     <div>
-      {/* <Link to={props.prev}>Previous</Link>
-      <Link to={props.next}>Next</Link> */}
-      {props.prev && <div>Back: {props.prev}</div>}
-      {props.next && <div>Next: {props.next}</div>}
+      {prev > 0 && <button onClick={() => handleClick(prev)}>Back</button>}
+      {next < 10 && <button onClick={() => handleClick(next)}>Next</button>}
     </div>
   )
 }
 
 Footer.propTypes = {
-  next: PropTypes.string,
-  prev: PropTypes.string,
+  page: PropTypes.number,
+  setPage: PropTypes.func,
 }
 
 export default Footer

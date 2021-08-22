@@ -7,13 +7,21 @@ const SW_PLANETS = `${SW_API}/planets`
 const peopleCache = {}
 const planetsCache = {}
 
+function clamp(val, min, max) {
+  return val > max ? max : val < min ? min : val
+}
+
 const getPeoplePage = async (page) => {
-  page = page ?? '1' // need better boundary handling (0, -1, etc.)
+  // constrain a number between 1 and 9 (there are only 82 / 10 pages of SW characters)
+  // convert to string for querying/cache lookup
+  page = clamp(page, 1, 9).toString()
 
   // check the cache
   if (peopleCache[page]) {
+    console.log(`Cache hit for people page ${page}`)
     return peopleCache[page]
   }
+  console.log(`Querying people page = ${page}`)
 
   const responseJSON = await fetch(`${SW_PEOPLE}/?page=${page}`)
   const response = await responseJSON.json()
@@ -33,9 +41,7 @@ const getPeoplePage = async (page) => {
   const people = results.map((item) => {
     return {
       name: item.name,
-      origin: planetsCache[item.homeworld]
-        ? planetsCache[item.homeworld]
-        : item.homeworld,
+      homeworld: item.homeworld,
       height: item.height,
       mass: item.mass,
       birth_year: item.birth_year,
@@ -47,42 +53,24 @@ const getPeoplePage = async (page) => {
 }
 
 const getPlanet = async (url) => {
-  const responseJSON = await fetch(url)
-  const response = await responseJSON.json()
-
-  //console.log(`fetched planet ${url} = ${response.name}`)
-
-  planetsCache[url] = response
-  return planetsCache[url]
-}
-
-// unused atm -- could be used for planet pre-fetching...
-const getPlanetPage = async (page) => {
-  page = page ?? '1' // need better boundary handling (0, -1, etc.)
-
-  // check the cache
-  if (planetsCache[page]) {
-    return planetsCache[page]
+  if (planetsCache[url]) {
+    console.log(`Cache hit for planet ${url}`)
+    return planetsCache[url]
   }
 
-  const responseJSON = await fetch(`${SW_PLANETS}/?page=${page}`)
-  const response = await responseJSON.json()
+  try {
+    console.log(``)
+    const responseJSON = await fetch(url)
+    const response = await responseJSON.json()
 
-  // TODO: check response status???
+    console.log(`fetched planet ${url} = ${response.name}`)
 
-  // important fields:
-  // data.results { name, url }
-  const results = response?.results ?? []
-  // console.log(results)
-
-  const planets = results.map(({ name, url }) => {
-    return {
-      name,
-      url,
-    }
-  })
-
-  return planets
+    planetsCache[url] = response
+    return planetsCache[url]
+  } catch (err) {
+    console.error(`Error fetching planet: ${url}`)
+    return { name: 'error' }
+  }
 }
 
 module.exports = {

@@ -1,4 +1,4 @@
-//import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 
 import Loading from './components/Loading'
@@ -10,7 +10,7 @@ import Person from './model/Person'
 import './App.css'
 
 const SW_PEOPLE_PAGE = gql`
-  query People($page: String) {
+  query People($page: Int!) {
     people(page: $page) {
       count
       next
@@ -33,6 +33,8 @@ function StarWarsPeople({ page }) {
     variables: { page },
   })
 
+  console.log(`rendering page ${page}`)
+
   if (loading) return <Loading />
   if (error) return <Error error={error} />
 
@@ -45,11 +47,13 @@ function StarWarsPeople({ page }) {
 }
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(1)
+
   return (
     <>
       <Header />
-      <StarWarsPeople page={'1'} />
-      <Footer prev="" next="2" />
+      <StarWarsPeople page={currentPage} />
+      <Footer page={currentPage} setPage={setCurrentPage} />
     </>
   )
 }
