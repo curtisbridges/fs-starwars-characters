@@ -1,0 +1,8 @@
+.header {
+  background-color: black;
+  color: yellow;
+
+  border-radius: .25rem;
+  margin: 0;
+  padding: 2rem;
+}
