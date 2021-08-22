@@ -45,9 +45,9 @@ Tech to use Node.js/React
   - [ ] Add testing with React Testing Library?
   - [ ] Remove old express endpoints
 - [x] Page data
-  - [ ] Add load more link to React front-end
+  - [x] Add load more link to React front-end
 - [ ] Style the app
-  - [ ] Make responsive for desktop (3 cards wide)
+  - [x] Make responsive for desktop (3 cards wide)
   - [ ] Use Star Wars fonts?
 - [x] Push to GitHub
   - [x] Provide instructions for starting
