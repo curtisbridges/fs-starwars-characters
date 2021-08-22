@@ -1,11 +1,11 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer, gql } = require('apollo-server-express')
 const { getPeoplePage, getPlanet } = require('../model/starwars')
 
 // The GraphQL schema
 const typeDefs = gql`
   type Query {
     hello: String
-    people(page: String): PeoplePage!
+    people(page: Int!): PeoplePage!
   }
 
   type PeoplePage {
@@ -17,7 +17,9 @@ const typeDefs = gql`
 
   type Planet {
     name: String!
-    url: String!
+    climate: String!
+    terrain: String!
+    population: String!
   }
 
   type Person {
@@ -25,7 +27,8 @@ const typeDefs = gql`
     height: String!
     mass: String!
     birth_year: String!
-    origin: Planet
+    homeworld: String!
+    origin: Planet!
   }
 `
 
@@ -39,10 +42,7 @@ const resolvers = {
   },
   Person: {
     origin: (parent, args) => {
-      if (parent.origin?.startsWith('http')) {
-        return getPlanet(parent.origin)
-      }
-      return parent.origin
+      return getPlanet(parent.homeworld)
     },
   },
 }
@@ -52,4 +52,4 @@ const server = new ApolloServer({
   resolvers,
 })
 
-module.exports = { server }
+module.exports = server
