@@ -9,10 +9,12 @@ function Footer(props) {
 
   return (
     <div className={classes.footer}>
-      {prev > 0 && (
+      {prev > 0 ? (
         <button className={classes.button} onClick={() => props.setPage(prev)}>
           Back
         </button>
+      ) : (
+        <div />
       )}
       {next < 10 && (
         <button className={classes.button} onClick={() => props.setPage(next)}>

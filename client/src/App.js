@@ -42,7 +42,13 @@ function StarWarsPeople({ page }) {
       new Person(name, height, mass, birth_year, origin.name)
   )
 
-  return people.map((person) => <Card key={person.name} person={person}></Card>)
+  return (
+    <div className="container">
+      {people.map((person) => (
+        <Card key={person.name} person={person}></Card>
+      ))}
+    </div>
+  )
 }
 
 function App() {

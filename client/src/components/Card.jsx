@@ -1,4 +1,11 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faGlobe,
+  faArrowsAltV,
+  faWeight,
+  faCalendar,
+} from '@fortawesome/free-solid-svg-icons'
 
 import classes from './Card.module.css'
 
@@ -8,12 +15,22 @@ function Card({ person }) {
       <h2 className={classes.header}>{person.name}</h2>
       <div className={classes.container}>
         <div className={classes.row}>
-          <div>Height: {person.height}</div>
-          <div>Mass: {person.mass}</div>
+          <div className={classes.trait}>
+            <FontAwesomeIcon icon={faArrowsAltV} />
+            <p>{person.height}</p>
+          </div>
+          <div className={classes.trait}>
+            <FontAwesomeIcon icon={faWeight} /> <p>{person.mass}</p>
+          </div>
         </div>
         <div className={classes.row}>
-          <div>Birth Year: {person.birth}</div>
-          <div>Home Planet: {person.origin}</div>
+          <div className={classes.trait}>
+            <FontAwesomeIcon icon={faCalendar} /> <p>{person.birth}</p>
+          </div>
+          <div className={classes.trait}>
+            <FontAwesomeIcon icon={faGlobe} />
+            <p>{person.origin}</p>
+          </div>
         </div>
       </div>
     </div>
