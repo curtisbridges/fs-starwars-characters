@@ -1,23 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import classes from './Footer.module.css'
 
 function Footer(props) {
   const prev = +props.page - 1
   const next = +props.page + 1
 
-  console.log(`Next=${next}`)
-  console.log(`Prev=${prev}`)
-
-  function handleClick(page) {
-    console.log(`Changing page to ${page}`)
-    props.setPage(page)
-  }
-
   return (
-    <div>
-      {prev > 0 && <button onClick={() => handleClick(prev)}>Back</button>}
-      {next < 10 && <button onClick={() => handleClick(next)}>Next</button>}
+    <div className={classes.footer}>
+      {prev > 0 && (
+        <button className={classes.button} onClick={() => props.setPage(prev)}>
+          Back
+        </button>
+      )}
+      {next < 10 && (
+        <button className={classes.button} onClick={() => props.setPage(next)}>
+          Next
+        </button>
+      )}
     </div>
   )
 }

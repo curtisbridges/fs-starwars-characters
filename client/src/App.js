@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Card from './components/Card'
 import Footer from './components/Footer'
 import Person from './model/Person'
+
 import './App.css'
 
 const SW_PEOPLE_PAGE = gql`
@@ -33,8 +34,6 @@ function StarWarsPeople({ page }) {
     variables: { page },
   })
 
-  console.log(`rendering page ${page}`)
-
   if (loading) return <Loading />
   if (error) return <Error error={error} />
 
@@ -50,11 +49,11 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1)
 
   return (
-    <>
+    <div className="App">
       <Header />
       <StarWarsPeople page={currentPage} />
       <Footer page={currentPage} setPage={setCurrentPage} />
-    </>
+    </div>
   )
 }
 

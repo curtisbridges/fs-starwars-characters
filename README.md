@@ -48,6 +48,7 @@ Tech to use Node.js/React
   - [ ] Add load more link to React front-end
 - [ ] Style the app
   - [ ] Make responsive for desktop (3 cards wide)
+  - [ ] Use Star Wars fonts?
 - [x] Push to GitHub
   - [x] Provide instructions for starting
   - [ ] Add any commentary you'd like about the task

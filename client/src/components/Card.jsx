@@ -1,17 +1,19 @@
 import React from 'react'
 
+import classes from './Card.module.css'
+
 function Card({ person }) {
   return (
-    <div>
-      <h2>{person.name}</h2>
-      <div>
-        <div>
-          <div>{person.height}</div>
-          <div>{person.mass}</div>
+    <div className={classes.card}>
+      <h2 className={classes.header}>{person.name}</h2>
+      <div className={classes.container}>
+        <div className={classes.row}>
+          <div>Height: {person.height}</div>
+          <div>Mass: {person.mass}</div>
         </div>
-        <div>
-          <div>{person.birth}</div>
-          <div>{person.origin}</div>
+        <div className={classes.row}>
+          <div>Birth Year: {person.birth}</div>
+          <div>Home Planet: {person.origin}</div>
         </div>
       </div>
     </div>
