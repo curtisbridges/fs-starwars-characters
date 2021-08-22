@@ -1,7 +1,7 @@
 const server = require('./graphql/starwars')
 const app = require('./app.js')
 
-const PORT = process.PORT ?? 4000
+const PORT = process.env.PORT ?? 4000
 
 async function startApolloServer() {
   await server.start()
