@@ -43,11 +43,11 @@ function StarWarsPeople({ page }) {
   )
 
   return (
-    <div className="container">
-      {people.map((person) => (
-        <Card key={person.name} person={person}></Card>
+    <main className="container">
+      {people.map((person, index) => (
+        <Card key={person.name} person={person} tabIndex={index}></Card>
       ))}
-    </div>
+    </main>
   )
 }
 
