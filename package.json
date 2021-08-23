@@ -10,6 +10,7 @@
     "startDev": "concurrently --kill-others-on-fail \"npm run startDevServer\" \"BROWSER=none npm run startDevClient\"",
     "build": "cd client && npm run build",
     "clean": "rm -rf client/build",
+    "test": "jest",
     "testServer": "jest --watch"
   },
   "keywords": [],
