@@ -65,8 +65,6 @@ If building from source, there are Jest tests included to test the model and fet
   - [x] Add any commentary you'd like about the task
   - [x] Send link to repo to Skillsoft
 
-## Open Questions
-
 ## Comments
 - I would always use https professionally, but didn't for this small example.
 - Most larger full stack examples would use a database but this small example didn't explicitly state one was required.
@@ -77,3 +75,8 @@ If building from source, there are Jest tests included to test the model and fet
   - With a client side router, I'd also add a 404 page for invalid URLs.
   - I'd download and use a Star Wars appropriate font, at least for the header
 - This was a __fun__ and interesting project.
+
+---
+## Screenshot
+
+![A screenshot of the UI](https://github.com/curtisbridges/fs-starwars-characters/blob/8ff597caa1f525429cc14c036a8b7c834c2d75df/.github/ui.png)
