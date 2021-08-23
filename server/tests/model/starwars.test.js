@@ -1,11 +1,5 @@
 const starwars = require('../../model/starwars')
 
-test('Should fetch default page of people', async () => {
-  const page = await starwars.getPeoplePage()
-  expect(page).not.toBeNull()
-  expect(page.count).toBeGreaterThan(0)
-})
-
 test('Should fetch first page of people', async () => {
   const page = await starwars.getPeoplePage(1)
   expect(page).not.toBeNull()

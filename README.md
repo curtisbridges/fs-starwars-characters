@@ -31,6 +31,9 @@ There are two options for running the app. They are detailed below; it can be bu
 2. `docker run -d -p  4000:4000 --name skillsoft-starwars skillsoft-image`
 3. Open browser to http://localhost:4000
 
+### Run server tests
+If building from source, there are Jest tests included to test the model and fetching from the SWAPI. These can be run using the `npm run test` command.
+
 ## TODO List
 - [x] Create TODO list
 - [x] Create git repo locally.
@@ -41,7 +44,7 @@ There are two options for running the app. They are detailed below; it can be bu
   - [x] Implement graphql operation for sw people.
     - [x] Define the schema
     - [x] Implement the resolvers
-    - [ ] Document GraphQL schema
+    - [x] Document GraphQL schema
     - [ ] Add GraphQL testing library? (Apollo)
 - [x] Create React front-end (mobile first)
   - [x] Update Node.js to serve react front-end
@@ -50,7 +53,7 @@ There are two options for running the app. They are detailed below; it can be bu
     - [x] Make one card wide.
   - [ ] Handle client-side routes to the various paginated SW data
   - [ ] Add testing with React Testing Library?
-  - [ ] Remove old express endpoints
+  - [ ] ~~~Remove old express endpoints~~~
 - [x] Page data
   - [x] Add load more link to React front-end
 - [x] Style the app
