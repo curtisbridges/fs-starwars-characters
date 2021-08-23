@@ -46,9 +46,10 @@ Tech to use Node.js/React
   - [ ] Remove old express endpoints
 - [x] Page data
   - [x] Add load more link to React front-end
-- [ ] Style the app
+- [x] Style the app
   - [x] Make responsive for desktop (3 cards wide)
   - [ ] Use Star Wars fonts?
+- [x] Create Dockerfile
 - [x] Push to GitHub
   - [x] Provide instructions for starting
   - [ ] Add any commentary you'd like about the task
