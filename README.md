@@ -45,14 +45,14 @@ If building from source, there are Jest tests included to test the model and fet
     - [x] Define the schema
     - [x] Implement the resolvers
     - [x] Document GraphQL schema
-    - [ ] Add GraphQL testing library? (Apollo)
+    - [ ] ~~~Add GraphQL testing library? (Apollo)~~~
 - [x] Create React front-end (mobile first)
   - [x] Update Node.js to serve react front-end
   - [x] Fetch SW data in front-end
   - [x] Display: name, origin, height, mass, and birth date.
     - [x] Make one card wide.
-  - [ ] Handle client-side routes to the various paginated SW data
-  - [ ] Add testing with React Testing Library?
+  - [ ] ~~~Handle client-side routes to the various paginated SW data~~~
+  - [ ] ~~~Add testing with React Testing Library?~~~
   - [ ] ~~~Remove old express endpoints~~~
 - [x] Page data
   - [x] Add load more link to React front-end
@@ -62,12 +62,18 @@ If building from source, there are Jest tests included to test the model and fet
 - [x] Create Dockerfile
 - [x] Push to GitHub
   - [x] Provide instructions for starting
-  - [ ] Add any commentary you'd like about the task
-  - [ ] Send link to repo to Skillsoft
+  - [x] Add any commentary you'd like about the task
+  - [x] Send link to repo to Skillsoft
 
 ## Open Questions
 
 ## Comments
 - I would always use https professionally, but didn't for this small example.
 - Most larger full stack examples would use a database but this small example didn't explicitly state one was required.
-  - If the dataset was larger, I'd consider memoizing the fetch of Star Wars data.
+  - I did cache queries to the SWAPI in the server code, partly for performance gains but also to limit unnecessary calls to SWAPI (I was being cognizant of the 10,000/day limit)
+- Eventually I'd make these client changes:
+  - I'd change the state so that the prev/next buttons would not sure when loading data.
+  - Add a router to the React app; this would directly correlate to the character pages provided by the API.
+  - With a client side router, I'd also add a 404 page for invalid URLs.
+  - I'd download and use a Star Wars appropriate font, at least for the header
+- This was a __fun__ and interesting project.
