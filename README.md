@@ -23,7 +23,7 @@ There are two options for running the app. They are detailed below; it can be bu
    4. `cd ..` to get back to the root of the project
 3. Start the server:
    1. `npm start` to run the server, which also serves the client app.
-   2. Alternatively, for a non-production, developer setup that hot reloads client and server as files are modified: `npm run startDev`.
+   2. Alternatively, for a non-production, developer setup that hot reloads client and server as files are modified: `npm run startDev`. (Project runs on [port 3000](http://localhost:3000) in development mode)
 4. Open browser to http://localhost:4000 to view the app.
 
 ### Dockerized Version
@@ -66,15 +66,14 @@ If building from source, there are Jest tests included to test the model and fet
   - [x] Send link to repo to Skillsoft
 
 ## Comments
-- I would always use https professionally, but didn't for this small example.
+- I would always generate a certificate use https professionally, but didn't for this small example.
 - Most larger full stack examples would use a database but this small example didn't explicitly state one was required.
   - I did cache queries to the SWAPI in the server code, partly for performance gains but also to limit unnecessary calls to SWAPI (I was being cognizant of the 10,000/day limit)
 - Eventually I'd make these client changes:
-  - I'd change the state so that the prev/next buttons would not sure when loading data.
-  - Add a router to the React app; this would directly correlate to the character pages provided by the API.
-  - With a client side router, I'd also add a 404 page for invalid URLs.
-  - I'd download and use a Star Wars appropriate font, at least for the header
-- This was a __fun__ and interesting project.
+  - I'd change the state so that the prev/next buttons would not show when loading data.
+  - Add a router to the React app; this would directly correlate to the character pages provided by the API. With a client side router, I'd also add a 404 page for invalid URLs.
+  - I'd download and use a Star Wars appropriate font, at least for the header. Although this is easy to do, I didn't do it because I didn't have time to vet the license.
+- This was a **fun** and _interesting_ project.
 
 ---
 ## Screenshot
